@@ -1,8 +1,8 @@
 
-
+    ID_=1;
 function addProduct()
 {
-
+    
     let productsTable=[]
 
     
@@ -17,9 +17,11 @@ function addProduct()
     }
 
     else {
+        
+        ID_+=1;
         let new_product=
         {
-            ID: productsTable.length +1,
+            ID: ID_,
             NAME: prod_name,
             PRICE: prod_price,
             DESCRIPTION: prod_descript,
