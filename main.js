@@ -9,7 +9,7 @@ function addProduct()
     let prod_name=document.getElementById('productName').value
     let prod_price=document.getElementById('productPrice').value
 
-    let prod_descript=document.getElementById('Product_Description').value
+    let prod_descript=document.getElementById('Product_description').value
 
     if (!prod_name || !prod_price)
     {
