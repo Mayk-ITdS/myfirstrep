@@ -11,16 +11,18 @@ function addProduct()
 
     let prod_descript=document.getElementById('productDescription').value
 
-    if (!productName || !productPrice)
+    if (!prod_name || !prod_price)
     {
-        alert('You have to fill Product Name and Product Price fields')
+        alert('You have to fill Product Name and Product Price fields');
+    }
 
+    else {
         let new_product=
         {
-            id: productsTable.length +1,
-            Name: prod_name,
-            Price: prod_price,
-            Description: prod_decript,
+            ID: productsTable.length +1,
+            NAME: prod_name,
+            PRICE: prod_price,
+            DESCRIPTION: prod_descript,
         };
 
         productsTable.push(new_product);
@@ -29,20 +31,21 @@ function addProduct()
         document.getElementById('productPrice').value = '';
 
         
-
+        update_Table()
     }
-    function update_Table()
+function update_Table()
     {
-        let tbody=document.getElementById('productTable').getElementsByTagName('tbody')[0];
+    let tbody=document.getElementById('productTable').getElementsByTagName('tbody')[0];
         
-    productsTable.forEach(function(product)
-    {
-        let new_row=document.createElement('tr');
+        productsTable.forEach(
+        
+        function (product) {
+        let new_row = document.createElement('tr')
 
-        new_row.innerHTML='<td>' + product.ID + '</td>' +
-                            '<td>' + product.NAME + '</td>' +
-                            '<td>'  + product.PRICE + '</td>' +
-                            '<td>' + product.DESCRIPTION +'</td>';
+        new_row.innerHTML = '<td>' + product.ID + '</td>' +
+            '<td>' + product.NAME + '</td>' +
+            '<td>' + product.PRICE + '</td>' +
+            '<td>' + product.DESCRIPTION + '</td>'
         tbody.appendChild(new_row);
     })
 
